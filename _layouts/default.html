@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="icon" href="/assets/img/RECARN-UQAM-Logo-01.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/RECARN-UQAM-Logo-01.png" alt="Logo RECARN-UQAM" height="48">
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">☰</label>
+      <nav class="site-nav">
+        {% for item in site.nav %}
+          <a href="{{ item.url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+        {% endfor %}
+        <a class="btn btn-gold" href="{{ site.org.register_url }}" target="_blank" rel="noopener">S'inscrire</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    {% if page.hero %}
+    <section class="hero">
+      <div class="wrap">
+        <h1>{{ page.hero_title | default: page.title }}</h1>
+        {% if page.hero_text %}<p class="hero-text">{{ page.hero_text }}</p>{% endif %}
+        {% if page.hero_cta %}<a class="btn btn-gold" href="{{ site.org.register_url }}" target="_blank" rel="noopener">S'inscrire</a>{% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    <div class="wrap content">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <img src="/assets/img/RECARN-UQAM-Logo-01.png" alt="Logo RECARN-UQAM" height="40">
+        <p>{{ site.org.address }}</p>
+        <p><strong>Tél. :</strong> {{ site.org.phone }}<br>
+           <strong>Courriel :</strong> <a href="mailto:{{ site.org.email }}">{{ site.org.email }}</a></p>
+        <p><a href="{{ site.org.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></p>
+      </div>
+      <div>
+        <h4>Liens utiles</h4>
+        <ul>
+          {% for item in site.nav %}<li><a href="{{ item.url }}">{{ item.title }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h4>Champs d'action</h4>
+        <ul>
+          <li>Calcul informatique de pointe</li>
+          <li>Gestion des données de recherche</li>
+          <li>Intelligence artificielle</li>
+          <li>Cybersécurité</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>Financé par l'<a href="https://alliancecan.ca" target="_blank" rel="noopener">Alliance de Recherche Numérique du Canada</a>.</p>
+      <p>© {{ site.time | date: "%Y" }} RECARN-UQAM. Tous droits réservés.</p>
+    </div>
+  </footer>
+</body>
+</html>
