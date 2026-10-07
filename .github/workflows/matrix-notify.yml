@@ -1,0 +1,52 @@
+name: Notifier Matrix
+
+# Poste un message dans le salon Matrix à chaque nouveau commentaire
+# sur une issue ou une pull request (y compris les commentaires de revue).
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Envoyer le commentaire dans Matrix
+        env:
+          HOMESERVER: ${{ secrets.MATRIX_HOMESERVER }}   # optionnel, défaut https://matrix.org
+          ROOM_ID: ${{ secrets.MATRIX_ROOM_ID }}         # ID interne, commence par !  (pas l'alias #...)
+          TOKEN: ${{ secrets.MATRIX_TOKEN }}             # jeton d'accès du compte-bot
+          AUTHOR: ${{ github.event.comment.user.login }}
+          BODY: ${{ github.event.comment.body }}
+          URL: ${{ github.event.comment.html_url }}
+          REPO: ${{ github.repository }}
+          TITLE: ${{ github.event.issue.title || github.event.pull_request.title }}
+          NUMBER: ${{ github.event.issue.number || github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          HS="${HOMESERVER:-https://matrix.org}"
+          TXN="$(date +%s%N)"
+
+          # Construction du JSON avec jq : échappement sûr du contenu du commentaire.
+          PAYLOAD="$(jq -n \
+            --arg author "$AUTHOR" \
+            --arg num    "$NUMBER" \
+            --arg title  "$TITLE" \
+            --arg repo   "$REPO" \
+            --arg body   "$BODY" \
+            --arg url    "$URL" \
+            '{
+               msgtype: "m.notice",
+               body: ("💬 " + $author + " a commenté #" + $num + " « " + $title
+                      + " » dans " + $repo + " :\n" + $body + "\n" + $url)
+             }')"
+
+          curl -sf -X PUT \
+            -H "Authorization: Bearer ${TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data "$PAYLOAD" \
+            "${HS}/_matrix/client/v3/rooms/${ROOM_ID}/send/m.room.message/${TXN}"
