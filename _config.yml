@@ -1,0 +1,38 @@
+# Configuration du site RECARN-UQAM (Jekyll / GitHub Pages)
+title: RECARN-UQAM
+tagline: Réseau des Étudiants Chercheurs de l'Alliance de Recherche Numérique à l'UQAM
+description: >-
+  RECARN-UQAM regroupe des étudiant·es aux cycles supérieurs de l'UQAM autour
+  des infrastructures de recherche numérique de l'Alliance de recherche numérique du Canada.
+lang: fr-CA
+url: "https://www.recarn-uqam.org"
+baseurl: ""
+
+# Coordonnées (réutilisées dans le pied de page)
+org:
+  email: contact@recarn-uqam.org
+  phone: "+1 (514) 242-3490"
+  address: "201 Av. du Président-Kennedy, Montréal, QC H2X 3Y7"
+  linkedin: "https://www.linkedin.com/company/recarn-uqam/"
+  register_url: "https://forms.office.com/r/BhrEg8yGGq"
+
+# Menu principal (ordre d'affichage)
+nav:
+  - title: Accueil
+    url: /
+  - title: À propos
+    url: /about.html
+  - title: Équipe
+    url: /equipe.html
+  - title: Évènements
+    url: /evenements.html
+  - title: Contact
+    url: /contact.html
+
+# Jekyll
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
