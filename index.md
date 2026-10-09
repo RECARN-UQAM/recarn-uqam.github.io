@@ -20,10 +20,10 @@ Le **Réseau des Étudiants Chercheurs de l'Alliance de Recherche Numérique à 
 </div>
 
 <div class="stats" markdown="0">
-  <div class="stat"><div class="num">—</div><div class="lbl">Étudiant·es ciblé·es</div></div>
-  <div class="stat"><div class="num">—</div><div class="lbl">Mois prévus</div></div>
-  <div class="stat"><div class="num">—</div><div class="lbl">Ateliers à organiser</div></div>
-  <div class="stat"><div class="num">—</div><div class="lbl">Formateur·rices potentiel·les</div></div>
+  <div class="stat"><div class="num">50</div><div class="lbl">Étudiant·es ciblé·es</div></div>
+  <div class="stat"><div class="num">7</div><div class="lbl">Mois prévus</div></div>
+  <div class="stat"><div class="num">28</div><div class="lbl">Ateliers à organiser</div></div>
+  <div class="stat"><div class="num">4</div><div class="lbl">Formateur·rices potentiel·les</div></div>
 </div>
 
 ## Champs d'action
