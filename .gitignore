@@ -1,0 +1,13 @@
+# Aperçu local (Jekyll / Bundler)
+_site/
+.jekyll-cache/
+.sass-cache/
+.bundle/
+vendor/
+Gemfile.lock
+
+# Réglages locaux de Claude Code
+.claude/
+
+# macOS
+.DS_Store

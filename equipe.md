@@ -2,7 +2,7 @@
 layout: default
 title: Équipe
 permalink: /equipe.html
-description: L'équipe et les mentors de RECARN-UQAM.
+description: L'équipe de RECARN-UQAM.
 ---
 
 # Notre équipe
@@ -18,21 +18,41 @@ description: L'équipe et les mentors de RECARN-UQAM.
 </div>
 
 <div class="member" markdown="0">
-  <img src="/assets/img/trainers/chair-holder-abdoulaye-banire-diallo.jpg" alt="Pr. Abdoulaye Baniré Diallo">
+  <img src="/assets/img/team/guy-olivier-millimouno.jpeg" alt="Guy Olivier Millimouno">
   <div>
-    <h3>Pr. Abdoulaye Baniré Diallo</h3>
-    <div class="role">Directeur de recherche et mentor EDIA-IRN</div>
-    <p>Professeur en bioinformatique et intelligence artificielle à l'UQAM, directeur du laboratoire de bioinformatique de l'UQAM et co-titulaire de la Chaire de recherche-innovation McGill-UQAM sur le bien-être animal et l'intelligence artificielle (WELL-E).</p>
-    <p><a href="https://www.linkedin.com/in/abdoulaye-banir%C3%A9-diallo-2184a156/" target="_blank" rel="noopener">LinkedIn</a></p>
+    <h3>Guy Olivier Millimouno</h3>
+    <div class="role">Membre · Développement</div>
+    <p>Maîtrise en informatique, concentration en intelligence et gestion des données à l'UQAM.</p>
+    <p><a href="https://www.linkedin.com/in/gyom15/" target="_blank" rel="noopener">LinkedIn</a></p>
   </div>
 </div>
 
 <div class="member" markdown="0">
-  <img src="/assets/img/trainers/eric-lavallee.jpeg" alt="Éric Lavallée">
+  <img src="/assets/img/team/aliou-barry.jpeg" alt="Aliou Barry">
   <div>
-    <h3>Éric Lavallée</h3>
-    <div class="role">Analyste informatique à l'UQAM · Soutien institutionnel</div>
-    <p>Soutien institutionnel pour les infrastructures de recherche numérique (IRN) à l'UQAM. Analyste informatique à l'UQAM depuis 2018, responsable de la gestion des IRN de l'UQAM et de la coordination des activités de formation et de soutien aux chercheur·euses.</p>
-    <p><a href="https://www.linkedin.com/in/eric-lavallee-9b7a9b1a/" target="_blank" rel="noopener">LinkedIn</a></p>
+    <h3>Aliou Barry</h3>
+    <div class="role">Membre · Setup</div>
+    <p>Maîtrise en informatique, concentration en systèmes électroniques à l'UQAM.</p>
+    <p><a href="https://www.linkedin.com/in/aliou-barry-302713226/" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+</div>
+
+<div class="member" markdown="0">
+  <img src="/assets/img/team/awa_samake.jpeg" alt="Awa Samaké">
+  <div>
+    <h3>Awa Samaké</h3>
+    <div class="role">Membre · Community Outreach</div>
+    <p>Doctorat en informatique à l'UQAM.</p>
+    <p><a href="https://www.linkedin.com/in/awa-samake/" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+</div>
+
+<div class="member" markdown="0">
+  <img src="/assets/img/team/lina-agoune.jpg" alt="Lina Aggoune">
+  <div>
+    <h3>Lina Aggoune</h3>
+    <div class="role">Membre · Infographie</div>
+    <p>Maîtrise en informatique, concentration en bioinformatique à l'UQAM.</p>
+    <p><a href="https://www.linkedin.com/in/lina-aggoune/" target="_blank" rel="noopener">LinkedIn</a></p>
   </div>
 </div>
