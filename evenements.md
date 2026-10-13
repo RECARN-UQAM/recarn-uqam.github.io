@@ -13,7 +13,7 @@ description: Les activités et séances à venir de RECARN-UQAM.
   <h3>On repart — RECARN-UQAM</h3>
   <ul class="meta">
     <li>{% include icon.html name="calendar" %}Vendredi 16 octobre 2026</li>
-    <li>{% include icon.html name="clock" %}15 h 30</li>
+    <li>{% include icon.html name="clock" %}16 h – 16 h 45</li>
     <li>{% include icon.html name="geo" %}Salle PK-1140, pavillon Président-Kennedy</li>
   </ul>
   <p>Première rencontre de la session pour relancer le réseau : on retrouve les membres actuel·les et ancien·nes, on présente les activités à venir et on accueille les personnes qui souhaitent nous rejoindre.</p>
