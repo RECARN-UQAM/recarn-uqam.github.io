@@ -88,7 +88,11 @@ a:hover{color:var(--accent-color)}
 /* Évènements */
 .event{border-left:4px solid var(--accent-color);background:var(--light-bg);border-radius:0 var(--radius) var(--radius) 0;padding:1.4rem 1.6rem;margin:1.4rem 0}
 .event h3{margin-top:0}
-.event .meta{color:var(--muted);font-weight:600;margin:.3rem 0 .6rem}
+.event-past{border-left-color:var(--border);padding:1.1rem 1.6rem}
+.event-past p{margin-bottom:0}
+.event .meta{color:var(--muted);font-weight:600;margin:.3rem 0 .6rem;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
+.event .meta li{display:inline-flex;align-items:center;gap:.45rem}
+.icon{width:1em;height:1em;flex:0 0 auto;color:var(--accent-ink)}
 
 /* ---------- Pied de page ---------- */
 .site-footer{background:var(--light-bg);border-top:1px solid var(--border);margin-top:3rem;padding:3rem 0 1.5rem;font-size:14px;color:var(--default-color)}
