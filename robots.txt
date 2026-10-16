@@ -1,0 +1,27 @@
+---
+layout: null
+sitemap: false
+---
+# robots.txt — {{ site.title }}
+# {{ site.url }}
+#
+# Ce fichier indique aux robots d'indexation (moteurs de recherche, etc.)
+# les parties du site qu'ils peuvent explorer. Il ne protège rien : toute
+# page publiée reste accessible à qui connaît son adresse.
+# Référence : https://www.rfc-editor.org/rfc/rfc9309
+
+# --- Tous les robots -------------------------------------------------------
+User-agent: *
+Allow: /
+
+# Feuilles de style, scripts et images : nécessaires aux moteurs pour
+# afficher les pages comme un visiteur.
+Allow: /assets/
+
+# Page d'erreur : sans intérêt dans les résultats de recherche.
+Disallow: /404.html
+
+
+# --- Plan du site ------------------------------------------------------------
+# Généré automatiquement par le plugin jekyll-sitemap.
+Sitemap: {{ site.url }}/sitemap.xml
