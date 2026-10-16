@@ -42,6 +42,8 @@ a:hover{color:var(--accent-color)}
 .btn:hover{text-decoration:none}
 .btn-gold{background:var(--accent-color);color:var(--accent-ink)}
 .btn-gold:hover{background:color-mix(in srgb,var(--accent-color),black 10%);color:var(--accent-ink)}
+.btn-outline{border:2px solid var(--accent-color);color:var(--accent-ink);padding:calc(.65rem - 2px) calc(1.6rem - 2px)}
+.btn-outline:hover{background:var(--accent-color);color:var(--accent-ink)}
 
 /* ---------- Entête ---------- */
 .site-header{background:var(--background-color);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:997}
@@ -118,3 +120,8 @@ a:hover{color:var(--accent-color)}
   .site-nav a.active::after{display:none}
   .nav-toggle:checked ~ .site-nav{display:flex}
 }
+
+/* Page 404 */
+.notfound{text-align:center;max-width:560px;margin:3rem auto 4rem}
+.notfound-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin:1.8rem 0}
+.notfound-help{color:var(--muted);font-size:.95rem}
