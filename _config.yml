@@ -30,6 +30,8 @@ nav:
 
 # Jekyll
 markdown: kramdown
+plugins:
+  - jekyll-sitemap   # génère /sitemap.xml (autorisé par GitHub Pages)
 exclude:
   - Gemfile
   - Gemfile.lock
