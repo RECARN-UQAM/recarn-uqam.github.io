@@ -5,6 +5,7 @@ _site/
 .bundle/
 vendor/
 Gemfile.lock
+_config.local.yml
 
 # Réglages locaux de Claude Code
 .claude/
