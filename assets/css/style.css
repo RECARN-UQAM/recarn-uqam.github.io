@@ -92,6 +92,10 @@ a:hover{color:var(--accent-color)}
 .event h3{margin-top:0}
 .event-past{border-left-color:var(--border);padding:1.1rem 1.6rem}
 .event-past p{margin-bottom:0}
+.event-actions{display:flex;flex-wrap:wrap;gap:.6rem}
+.event-with-poster{display:flex;gap:1.6rem;align-items:flex-start}
+.event-poster{width:200px;height:auto;flex:0 0 auto;border-radius:var(--radius);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+@media (max-width:640px){.event-with-poster{flex-direction:column}.event-poster{width:100%;max-width:320px}}
 .event .meta{color:var(--muted);font-weight:600;margin:.3rem 0 .6rem;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
 .event .meta li{display:inline-flex;align-items:center;gap:.45rem}
 .icon{width:1em;height:1em;flex:0 0 auto;color:var(--accent-ink)}
