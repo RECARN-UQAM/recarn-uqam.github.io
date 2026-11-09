@@ -1,0 +1,77 @@
+#!/bin/sh
+# Vérifie le message de commit selon les conventions de RECARN-UQAM.
+# Activation (une fois par clone) : git config core.hooksPath .githooks
+#
+# Règles :
+#   - titre au format « type: description » (voir TYPES ci-dessous) ;
+#   - titre de 50 caractères au plus ;
+#   - ligne vide entre le titre et le corps ;
+#   - lignes du corps de 72 caractères au plus (sauf liens et trailers
+#     comme Signed-off-by) ;
+#   - commit signé avec git commit -s (ligne Signed-off-by).
+
+TYPES="feat|fix|docs|content|style|refactor|ci|chore|test|revert"
+MAX_TITRE=50
+MAX_CORPS=72
+
+fichier="$1"
+
+# Nombre de caractères (et non d'octets) : on retire les octets de
+# continuation UTF-8 avant de compter, indépendamment de la locale.
+longueur() {
+  printf '%s' "$1" | LC_ALL=C tr -d '\200-\277' | wc -c | tr -d ' '
+}
+
+# Message utile : sans les commentaires de git ni le diff de --verbose.
+message=$(sed -e '/^# -* >8 -*$/,$d' -e '/^#/d' "$fichier")
+
+titre=$(printf '%s\n' "$message" | sed -n '1p')
+
+# Messages générés par git : on ne les vérifie pas.
+case "$titre" in
+  "Merge "*|"Revert "*|"fixup! "*|"squash! "*|"amend! "*) exit 0 ;;
+esac
+
+erreurs=""
+ajouter() { erreurs="${erreurs}  - $1
+"; }
+
+if ! printf '%s\n' "$titre" | grep -Eq "^($TYPES)(\([a-z0-9-]+\))?!?: [^ ]"; then
+  ajouter "le titre doit commencer par un type suivi de « : » ($(printf '%s' "$TYPES" | sed 's/|/, /g')), ex. « feat: ajouter une page 404 »"
+fi
+
+n=$(longueur "$titre")
+if [ "$n" -gt "$MAX_TITRE" ]; then
+  ajouter "le titre fait $n caractères (maximum $MAX_TITRE)"
+fi
+
+ligne2=$(printf '%s\n' "$message" | sed -n '2p')
+if [ -n "$ligne2" ]; then
+  ajouter "laissez une ligne vide entre le titre et le corps"
+fi
+
+num=0
+printf '%s\n' "$message" | sed '1d' > "${fichier}.corps"
+while IFS= read -r ligne || [ -n "$ligne" ]; do
+  num=$((num + 1))
+  case "$ligne" in
+    *://*|Signed-off-by:*|Co-authored-by:*|Closes\ *|Fixes\ *|Resolves\ *) continue ;;
+  esac
+  n=$(longueur "$ligne")
+  if [ "$n" -gt "$MAX_CORPS" ]; then
+    ajouter "la ligne $((num + 1)) du message fait $n caractères (maximum $MAX_CORPS)"
+  fi
+done < "${fichier}.corps"
+rm -f "${fichier}.corps"
+
+if ! printf '%s\n' "$message" | grep -q '^Signed-off-by: '; then
+  ajouter "le commit n'est pas signé : utilisez git commit -s"
+fi
+
+if [ -n "$erreurs" ]; then
+  printf 'Commit refusé : le message ne respecte pas les conventions.\n%s' "$erreurs" >&2
+  printf 'Voir la section « Messages de commit » de CONTRIBUTING.md.\n' >&2
+  exit 1
+fi
+
+exit 0
