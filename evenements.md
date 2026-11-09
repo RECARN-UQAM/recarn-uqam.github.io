@@ -10,17 +10,17 @@ description: Les activités et séances à venir de RECARN-UQAM.
 ## À venir
 
 <div class="event event-with-poster" markdown="0">
-  <img class="event-poster" src="/assets/img/evenements/ia-agentique-2026-10-30.webp" width="720" height="720" alt="Affiche de la séance IA agentique pour la recherche, en ligne le 30 octobre 2026 de 16 h à 17 h">
+  <img class="event-poster" src="/assets/img/evenements/rag-2026-11-13.webp" width="720" height="720" alt="Affiche de la séance RAG : quelle architecture pour vos données de recherche ?, en ligne le 13 novembre 2026 de 16 h à 17 h">
   <div>
-    <h3>IA agentique pour la recherche</h3>
+    <h3>RAG : quelle architecture pour vos données de recherche ?</h3>
     <ul class="meta">
-      <li>{% include icon.html name="calendar" %}Vendredi 30 octobre 2026</li>
+      <li>{% include icon.html name="calendar" %}Vendredi 13 novembre 2026</li>
       <li>{% include icon.html name="clock" %}16 h – 17 h</li>
       <li>{% include icon.html name="online" %}En ligne</li>
     </ul>
-    <p>Une séance pour découvrir l'IA agentique et ses usages dans le travail de recherche.</p>
+    <p>Une séance pour comprendre la génération augmentée par récupération (RAG) et choisir une architecture adaptée à vos données de recherche.</p>
     <p class="event-actions">
-      <a class="btn btn-gold" href="https://meet.google.com/qpi-oznv-wdy" target="_blank" rel="noopener">Rejoindre sur Google Meet</a>
+      <a class="btn btn-gold" href="https://meet.google.com/gpr-oqqy-rzf" target="_blank" rel="noopener">Rejoindre sur Google Meet</a>
       <a class="btn btn-outline" href="{{ site.org.register_url }}" target="_blank" rel="noopener">S'inscrire</a>
     </p>
   </div>
@@ -34,6 +34,16 @@ Pour ajouter un évènement, copie le bloc ci-dessus et remplis :
 -->
 
 ## Activités passées
+
+<div class="event event-past" markdown="0">
+  <h3>IA agentique pour la recherche</h3>
+  <ul class="meta">
+    <li>{% include icon.html name="calendar" %}Vendredi 30 octobre 2026</li>
+    <li>{% include icon.html name="clock" %}16 h – 17 h</li>
+    <li>{% include icon.html name="online" %}En ligne</li>
+  </ul>
+  <p>Découverte de l'IA agentique et de ses usages dans le travail de recherche.</p>
+</div>
 
 <div class="event event-past" markdown="0">
   <h3>On repart — RECARN-UQAM</h3>
